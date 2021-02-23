@@ -1,1 +1,19 @@
-@import '_variables.scss'
+@import '_variables.scss';
+
+
+.primary-yellow-txt{
+    color : $primary-yellow;
+}
+
+.d-flex{
+    display: flex;
+}
+
+
+.justify-content-end{
+    justify-content: flex-end;
+}
+
+.align-items-center{
+    align-items: flex-start;
+}

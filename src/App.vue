@@ -1,34 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-header></app-header>
+    <div class="d-flex justify-content-end align-items-center">
+      <custom-button>
+        Create
+        <mdicon name="plus" />
+      </custom-button>
 
-
-    <div class="test">
-      Hola mundo
     </div>
+
+    
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import AppHeader from '@/components/AppHeader'
+import CustomButton from '@/components/CustomButton'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+      AppHeader, CustomButton
   }
+
 }
 </script>
 
 <style lang="scss">
+  body{
+    background-color: $solid-black;
+    padding : 0px;
+    margin : 0;
+  }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color : white;
+  padding : 76px 31px;
+
 }
 
 .test{
