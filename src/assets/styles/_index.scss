@@ -1,5 +1,10 @@
 @import '_variables.scss';
 
+.subheader{
+    color: $secondary-gray;
+    font-family : 'Avenir Book';
+}
+
 
 .primary-yellow-txt{
     color : $primary-yellow!important;
@@ -43,7 +48,7 @@
     border-radius: 8px;
     padding : 10px;
     min-width: 170px;
-    box-shadow: inset -2px -2px 4px 0 #040B11, inset 2px 2px 4px 0 #1C232A, 0 13px 9px 0 #000000;
+    box-shadow: inset -2px -2px 4px 0 $solid-black, inset 2px 2px 4px 0 $secondary-black, 0 13px 9px 0 black;
 
 }
 
@@ -71,7 +76,7 @@
     }
 }
 
-@for $i from 10 through 24 {
+@for $i from 6 through 24 {
     .font-size-#{$i}{
         font-size: #{$i}px;
     }

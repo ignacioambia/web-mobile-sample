@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-progress-bar">
+  <div class="custom-progress-bar subheader">
       <div class="progress-legend">
           <div>
               Progress
@@ -8,7 +8,7 @@
               {{progress}}%
           </div>
       </div>
-      <div class="bar">
+      <div class="bar ">
          <div class="progress" :style="{'min-width' : progress + '%'}">
 
          </div>
@@ -41,6 +41,7 @@ export default {
         background-color: #494C50;
         min-height: 1px;
         position: relative;
+        margin-bottom: 3px;
 
         .progress{
             position: absolute;

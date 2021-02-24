@@ -10,10 +10,9 @@ export default {
       labels: ['Jun','Jul','Aug','Sep','Oct','Nov'],
       datasets: [
         {
-          backgroundColor: "#FFD200",
-          data: [5000,2000,5000,4000,12000,8500],
+          data: [5000,2000,5500,4000,12000,8500],
           borderColor : '#FFD200',
-          fill : false
+          backgroundColor : 'rgba(255, 210, 0, 0.1)'
         }
       ]
     };

@@ -11,16 +11,21 @@
 
 <style lang="scss">
 
-@font-face {
-    font-family: "Avenir";
-    src : url('assets/fonts/avenir_heavy.ttf') format("truetype");
-}
+  @font-face {
+      font-family: "Avenir Heavy";
+      src : url('assets/fonts/avenir_heavy.ttf') format("truetype");
+  }
+
+  @font-face {
+      font-family: "Avenir Book";
+      src : url('assets/fonts/avenir_book.ttf') format("truetype");
+  }
 
   body{
     background-color: $solid-black;
     padding : 0px;
     margin : 0;
-    font-family: "Avenir", Avenir, Helvetica, Arial, sans-serif;
+    font-family: "Avenir Heavy", Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color : white;

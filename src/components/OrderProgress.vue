@@ -1,13 +1,13 @@
 <template>
   <div class="order-progress">
-      <div class="order-number">
+      <div class="order-number" style="font-family: 'Avenir Book';">
           Order #{{order.id}}
       </div>
-      <div class="person-in-charge mb-1">
+      <div class="person-in-charge mb-1 subheader">
           {{order.inCharge}}
       </div>
       <custom-progress-bar :progress="order.progress"/>
-      <div class="d-flex justify-content-end font-size-10 secondary-gray-txt">
+      <div  class="d-flex justify-content-end font-size-10 secondary-gray-txt subheader">
           1 day left
       </div>
   </div>
@@ -33,13 +33,10 @@ export default {
     border-radius: 8px;
     padding : 10px;
     min-width: 170px;
-    box-shadow: inset -2px -2px 4px 0 #040B11, inset 2px 2px 4px 0 #1C232A, 0 13px 9px 0 #000000;
+    box-shadow: inset -2px -2px 4px 0 $solid-black, inset 2px 2px 4px 0 $secondary-black, 0 13px 9px 0 black;
 
     .person-in-charge{
-        color: $secondary-gray;
         font-size: 12px;
-        font-weight: 300;
-        letter-spacing: 0;
         line-height: 16px;
     }
 }

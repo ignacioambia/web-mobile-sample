@@ -2,11 +2,18 @@
     <div class="sections">
 
         <!-- upcoming tasks section-->
-        <div>
-            <div>
-                Upcoming Tasks 
-                <span class="upcoming-tasks">{{numUpcomingTasks}}</span>
+        <div >
+            <div class="d-flex justify-content-between mb-1">
+                <div >
+                    Upcoming Tasks 
+                    <span class="font-size-14 subheader">{{numUpcomingTasks}}</span>
+                </div>
+                <div>
+                    <statistics-download-button />
+                </div>
             </div>
+
+   
 
             <div class="orders">
                 <order-progress 
@@ -29,7 +36,7 @@
                     :key="statistic.key">
                     <div class="d-flex align-items-center ">
 
-                        <div class="ma-1" :class="statistic.iconClass">
+                        <div style="margin : .6rem;" :class="statistic.iconClass">
                             <mdicon  :name="statistic.icon" />
                         </div>
 
@@ -67,7 +74,7 @@
 
             <div class="total-expenses mt-1" >
                 <span class="font-size-22" >$</span>
-                <span>13,543</span>
+                <span>{{ currentExpenses}}</span>
                 
             </div>
 
@@ -82,9 +89,10 @@
 import OrderProgress from '@/components/OrderProgress'
 import StatisticsChart from '@/components/StatisticsChart'
 import CustomTab from '@/components/CustomTab'
+import StatisticsDownloadButton from '@/components/StatisticsDownloadButton'
 
 export default {
-    components : { OrderProgress, StatisticsChart,CustomTab },
+    components : { OrderProgress, StatisticsChart,CustomTab,StatisticsDownloadButton },
     data : () => ({
         upcomingTasks : [
             {
@@ -147,7 +155,13 @@ export default {
         ],
 
         expensesOptionSelected : 'Month',
-        expensesGroupingOptions : ['Day','Week','Month','Year']
+        //FOR DEMONSTRATION PURPOSES ONLY
+        expenses : {
+            'Day' : '1,255' ,
+            'Week' : '5,281',
+            'Month' : '13,543',
+            'Year' : '125,789'
+        }
 
 
     }),
@@ -155,6 +169,14 @@ export default {
     computed : {
         numUpcomingTasks(){
             return this.upcomingTasks.length;
+        },
+
+        currentExpenses(){
+            return this.expenses[this.expensesOptionSelected];
+        },
+
+        expensesGroupingOptions(){
+            return Object.keys(this.expenses);
         }
     },
 
@@ -163,7 +185,6 @@ export default {
 
 <style scoped lang="scss">
 .upcoming-tasks{
-    color : #C1C7D0;
     font-size: 14px;
 }
 
@@ -181,6 +202,20 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
+    & > div{
+        border-top: 1px solid $secondary-black;
+        border-left: 1px solid $secondary-black;
+        padding : 5px;
+
+        &:nth-child(-n+2) {
+            border-top: none;
+        }
+        &:nth-child(odd) {
+            border-left: none;
+        }
+
+    }
+
     .subheader{
         font-size: 14px;
         color : $secondary-gray;
@@ -194,10 +229,10 @@ export default {
 .chart-card {
     box-sizing: border-box;
     min-height: 355px;
-    border: 1px solid #10161C;
+    border: 1px solid $black-card;
     border-radius: 16px;
-    background-color: #10161C;
-    box-shadow: inset 2px 2px 6px 0 #1C232A, inset -2px -2px 6px 0 #040B11;
+    background-color: $black-card;
+    box-shadow: inset 2px 2px 6px 0 $secondary-black, inset -2px -2px 6px 0 #040B11;
 
     .expenses-grouping-options{
         display: flex;
