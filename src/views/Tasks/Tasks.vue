@@ -6,20 +6,20 @@
           <div class="d-flex justify-content-end mt-2">
             <custom-button>
               Create
-              <mdicon name="plus" />
+              <mdicon size="20"  name="plus" />
             </custom-button>
           </div>  
         </div>
 
+        <!-- tabs in task section -->
         <div class="d-flex justify-content-between mt-2 mb-2">
             <custom-tab
-              @click.native="$router.push({ name : tab.name})"
-              :active="tab.name == $route.name"
               v-for="tab in tasksTabs" 
+              @click.native="$router.push({ name : tab.name}).catch(e=>{})"
+              :active="tab.name == $route.name"
               :key="tab.name">
                 {{tab.name}}
             </custom-tab>
-
         </div>
 
 

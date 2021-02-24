@@ -27,7 +27,7 @@
 }
 
 #app {
-  padding : 76px 31px;
+  padding : 76px $app-padding;
 }
 
 </style>

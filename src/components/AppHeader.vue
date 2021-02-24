@@ -1,9 +1,9 @@
 <template>
     <div class="header">
-        <mdicon name="chevronLeft" />
+        <mdicon size="32" name="chevronLeft" />
 
         Tasks
-        <mdicon class="primary-yellow-txt"  name="bellOutline" />
+        <mdicon size="32" class="primary-yellow-txt"  name="bellOutline" />
     </div>
 </template>
 

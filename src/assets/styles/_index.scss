@@ -47,6 +47,11 @@
 
 }
 
+.sections>div {
+
+        margin-bottom: $app-padding;
+}
+
 
 @for $i from 1 through 10 {
     .mt-#{$i} {
@@ -66,7 +71,7 @@
     }
 }
 
-@for $i from 10 through 18 {
+@for $i from 10 through 24 {
     .font-size-#{$i}{
         font-size: #{$i}px;
     }
