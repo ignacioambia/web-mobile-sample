@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="custom-progress-bar">
       <div class="progress-legend">
           <div>
               Progress
@@ -8,8 +8,10 @@
               {{progress}}%
           </div>
       </div>
-      <div>
-          bar {{progress}}
+      <div class="bar">
+         <div class="progress" :style="{'min-width' : progress + '%'}">
+
+         </div>
       </div>
   </div>
 </template>
@@ -26,10 +28,27 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.progress-legend{
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
+.custom-progress-bar{
     color : $secondary-gray;
+
+    .progress-legend{
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+    }
+
+    .bar{
+        background-color: #494C50;
+        min-height: 1px;
+        position: relative;
+
+        .progress{
+            position: absolute;
+            min-height: 100%;
+            background-color: $primary-yellow ;
+        }
+    }
+
 }
+
 </style>

@@ -5,6 +5,10 @@
     color : $primary-yellow;
 }
 
+.secondary-gray-txt{
+    color : $secondary-gray;
+}
+
 .d-flex{
     display: flex;
 }
@@ -32,5 +36,11 @@
 @for $i from 1 through 10 {
     .mb-#{$i} {
         margin-bottom: #{$i}rem;
+    }
+}
+
+@for $i from 10 through 18 {
+    .font-size-#{$i}{
+        font-size: #{$i}px;
     }
 }
