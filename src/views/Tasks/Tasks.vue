@@ -11,6 +11,18 @@
           </div>  
         </div>
 
+        <div class="d-flex justify-content-between">
+            <custom-tab
+              @click.native="$router.push({ name : tab.name})"
+              :active="tab.name == $route.name"
+              v-for="tab in tasksTabs" 
+              :key="tab.name">
+                {{tab.name}}
+            </custom-tab>
+
+        </div>
+
+
 
 
         <div>
@@ -25,11 +37,29 @@
 
     import AppHeader from '@/components/AppHeader'
     import CustomButton from '@/components/CustomButton'
+    import CustomTab from '@/components/CustomTab'
     
     export default {
       name: 'App',
       components: {
-          AppHeader, CustomButton
+          AppHeader, CustomButton,CustomTab
+      },
+
+      computed : {
+        tasksTabs(){
+          return this.$router.options.routes
+          .find(r=>r.name == 'Tasks').children;       
+        }
+      },
+
+      methods : {
+        yolo(){
+          console.log('hola mundo')
+        }
+      },
+
+
+      mounted(){
       }
     
     }
