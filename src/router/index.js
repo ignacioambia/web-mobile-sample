@@ -1,22 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
+
+import Tasks from '../views/Tasks/Tasks';
+
+import AllTasks from '../views/Tasks/children/AllTasks';
+import CompletedTasks from '../views/Tasks/children/CompletedTasks';
+import InProgressTasks from '../views/Tasks/children/InProgressTasks';
+import StartedTasks from '../views/Tasks/children/StartedTasks';
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    name: 'Tasks',
+    component: Tasks,
+    redirect : 'all-tasks',
+    children : [
+      {
+        path : 'all-tasks',
+        name : 'All',
+        component : AllTasks
+      },
+      {
+        path : 'in-progress',
+        name : 'In Progress',
+        component : InProgressTasks
+      },
+      {
+        path : 'started',
+        name : 'Started',
+        component : StartedTasks
+      },
+      {
+        path : 'completed',
+        name : 'Completed',
+        component : CompletedTasks
+      },
+
+    ]
   }
 ]
 

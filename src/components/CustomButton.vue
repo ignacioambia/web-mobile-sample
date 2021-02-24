@@ -1,7 +1,7 @@
 <template>
-    <div class="custom-button">
+    <button class="custom-button">
         <slot></slot>
-    </div>
+    </button>
 </template>
 
 <script>
@@ -11,10 +11,12 @@
 
 <style scoped lang="scss">
 .custom-button{
-    position: absolute;
+    background-color: transparent;
+    border: 0px;
     padding: 3px;
     text-align: center;
     color: $primary-yellow;
     text-transform: uppercase;
+    cursor : pointer;
 }
 </style>
