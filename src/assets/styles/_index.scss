@@ -22,3 +22,15 @@
     align-items: flex-start;
 }
 
+
+@for $i from 1 through 10 {
+    .mt-#{$i} {
+        margin-top: #{$i}rem;
+    }
+}
+
+@for $i from 1 through 10 {
+    .mb-#{$i} {
+        margin-bottom: #{$i}rem;
+    }
+}
