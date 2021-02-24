@@ -1,5 +1,14 @@
 # mobile-sample
 
+Mobile layout sample to show my skills
+
+**Note:** This application can be found at https://ign-mobile-sample.herokuapp.com/
+
+![alt text](src/assets/Capture.PNG)
+
+
+Preview : 
+
 ## Project setup
 ```
 npm install
