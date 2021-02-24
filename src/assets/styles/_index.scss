@@ -2,7 +2,19 @@
 
 
 .primary-yellow-txt{
-    color : $primary-yellow;
+    color : $primary-yellow!important;
+}
+
+.primary-blue-txt{
+    color : $primary-blue;
+}
+
+.primary-green-txt{
+    color : $primary-green;
+}
+
+.primary-red-txt{
+    color : $primary-red;
 }
 
 .secondary-gray-txt{
@@ -23,7 +35,16 @@
 }
 
 .align-items-center{
-    align-items: flex-start;
+    align-items: center;
+}
+
+.card{
+    background-color: $black-card;
+    border-radius: 8px;
+    padding : 10px;
+    min-width: 170px;
+    box-shadow: inset -2px -2px 4px 0 #040B11, inset 2px 2px 4px 0 #1C232A, 0 13px 9px 0 #000000;
+
 }
 
 
@@ -36,6 +57,12 @@
 @for $i from 1 through 10 {
     .mb-#{$i} {
         margin-bottom: #{$i}rem;
+    }
+}
+
+@for $i from 1 through 10 {
+    .ma-#{$i} {
+        margin: #{$i}rem;
     }
 }
 

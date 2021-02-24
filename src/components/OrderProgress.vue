@@ -29,11 +29,10 @@ export default {
 
 <style scoped lang="scss">
 .order-progress{
-    background-color: #10161C;
+    background-color: $black-card;
     border-radius: 8px;
     padding : 10px;
     min-width: 170px;
-    margin : 12px;
     box-shadow: inset -2px -2px 4px 0 #040B11, inset 2px 2px 4px 0 #1C232A, 0 13px 9px 0 #000000;
 
     .person-in-charge{

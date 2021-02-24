@@ -10,8 +10,39 @@
             <order-progress 
                 v-for="task in upcomingTasks"
                 :order="task"
-                :key="task.id"></order-progress>
+                :key="task.id">
+            </order-progress>
         </div>
+
+        <div>
+            Statistics
+        </div>
+
+        <div class="card statistics-card">
+            <div 
+                v-for="statistic in statistics"
+                :key="statistic.key">
+                <div class="d-flex align-items-center ">
+
+                <div class="ma-1" :class="statistic.iconClass">
+                    <mdicon  :name="statistic.icon" />
+                </div>
+                <div>
+                    <div class="header">
+                        {{statistic.value}}
+                    </div>
+
+                    <div class="subheader">
+                        {{statistic.key}}
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+
     </div>
 </template>
 
@@ -52,7 +83,36 @@ export default {
                 progress : 12,
                 timeLimit : '2021-04-12'
             },
+        ],
+
+        statistics : [
+            {
+                key : 'Total projects',
+                value : '50',
+                icon : 'viewGridOutline',
+                iconClass : 'primary-blue-txt'
+            },
+            {
+                key : 'Completed',
+                value : '15',
+                icon : 'checkboxMarkedCircleOutline',
+                iconClass : 'primary-green-txt'
+            },
+            {
+                key : 'In progress',
+                value : '10',
+                icon : 'flashOutline',
+                iconClass : 'primary-yellow-txt'
+            },
+            {
+                key : 'Delayed',
+                value : '2',
+                icon : 'clockTimeFourOutline',
+                iconClass : 'primary-red-txt'
+            },
         ]
+
+
     }),
 
     computed : {
@@ -71,7 +131,23 @@ export default {
 
 .orders{
     display: flex;
+    gap: 24px;
     overflow-x: auto;
     padding-bottom: 12px;
 }
+
+.statistics-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .subheader{
+        font-size: 14px;
+        color : $secondary-gray;
+    }
+
+
+
+}
+
+
 </style>
