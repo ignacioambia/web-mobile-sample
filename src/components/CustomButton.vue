@@ -18,5 +18,7 @@
     color: $primary-yellow;
     text-transform: uppercase;
     cursor : pointer;
+    font-family: inherit;
+    font-size: 16px;
 }
 </style>

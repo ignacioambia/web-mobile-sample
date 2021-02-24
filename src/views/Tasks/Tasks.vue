@@ -3,7 +3,7 @@
         <app-header></app-header>
         <div>
 
-          <div class="d-flex justify-content-end mt-4 mb-4">
+          <div class="d-flex justify-content-end mt-2">
             <custom-button>
               Create
               <mdicon name="plus" />
@@ -11,7 +11,7 @@
           </div>  
         </div>
 
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mt-2 mb-2">
             <custom-tab
               @click.native="$router.push({ name : tab.name})"
               :active="tab.name == $route.name"

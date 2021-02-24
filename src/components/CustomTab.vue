@@ -22,6 +22,7 @@ export default {
 .custom-tab{
 
     cursor : pointer;
+    font-size: 14px;
 
     &.active{
         color : $primary-yellow;
